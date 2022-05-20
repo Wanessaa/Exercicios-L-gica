@@ -1,0 +1,93 @@
+<meta charset = "UTF-8">
+
+
+<input/>
+<button onclick = "adicionar()"> add</button>
+
+
+<script>
+ 
+var input = document.querySelector("input");
+input.value = "";
+input.focus();
+var itens=0
+var nomes = [];
+
+
+
+function adicionar(){
+
+    input.focus();
+    if(itens< 5){
+
+        if( input.value != ""){
+        
+            nomes.push (input.value);
+            itens++;
+            input.value= "";
+
+        }else{
+
+            alert("inválido, digite alguma coisa! ");
+           
+        }
+       
+    }else{
+
+       
+
+        while(resposta != "s" && resposta != "n" ){
+
+            var resposta=  prompt ("excendeu a quantidade. Deseja apagar algum item?  Digite EXATAMENTE  ' s ' ou ' n '. Beleza? ");
+            input.value= "";
+        }
+
+            if(resposta == "s"){
+            deletarItem(nomes);
+        }
+
+
+
+        }
+       
+
+}
+ 
+
+
+
+function imprimirArray(arrayNomes){
+
+    arrayNomes.forEach(   (elemento, indice) => mostra ( indice +" - "+  elemento )) ;
+
+}
+
+
+function mostra(mensagem){
+
+    document.write("</br>");
+    document.write(mensagem);
+    document.write("</br>");
+
+}
+
+
+
+
+function deletarItem(nomes){
+
+   while(posicao !=0 && posicao != 1 && posicao !=2 && posicao !=3  && posicao !=4){
+
+    var  posicao = prompt(" Qual a posição de 0 a 4?");
+
+   }
+   
+   nomes.splice(posicao,1);
+   //imprimirArray(nomes);
+   itens--;
+   alert("como vc deletou um nome, se quiser, pode adicionar outro");
+  
+
+}
+
+</script>

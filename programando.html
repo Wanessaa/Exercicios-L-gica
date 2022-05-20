@@ -1,0 +1,23 @@
+<meta charset = "UTF-8">
+
+
+<script>
+	
+
+function calculaImc(altura, peso) {
+	return peso/ (altura* altura);
+}
+
+function mostra (frase){
+	document.write(frase);
+}
+
+
+var altura = prompt("Qual a sua altura, por favor?")
+var peso = prompt (" Qual o seu peso?");
+
+mostra("seu imc "+ calculaImc(altura,peso));
+
+
+
+</script>

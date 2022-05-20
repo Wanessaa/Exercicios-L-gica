@@ -1,0 +1,52 @@
+<meta charset = "UTF-8">
+
+
+<input/>
+
+<button > adivinha</button>
+
+
+<script>
+var input = document.querySelector("input");
+var botao = document.querySelector("button");
+input.focus();
+
+
+//var segredo = Math.round(Math.random()*10);
+//console.log(segredo);
+
+segredos = [1,2,3,4];
+
+
+
+
+function verifica(){
+    var achou = false;
+    for(var i=0; i<segredos.length;i++){
+
+        if (input.value == segredos[i]){
+            alert("vc acertou!");
+            achou = true;
+            break;
+        }
+
+    }  
+
+    if(achou == false){
+        alert('você errou');
+        input.value= "";
+        input.focus();
+
+    }
+   
+    
+}
+
+botao.onclick= verifica;
+
+
+</script>
+
+
+
+

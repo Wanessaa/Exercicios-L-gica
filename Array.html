@@ -1,0 +1,93 @@
+<meta charset = "UTF-8">
+
+
+
+<input/>
+<button onclick = "encherArray()"> add</button>
+
+<script>
+
+var input = document.querySelector("input");
+var botao = document.querySelector("button");
+botao.onclick= "encherArray()"
+
+
+
+function encherArray(){
+    var nomesDigitados= [];
+
+    for (var i =0; i< 5;i++){
+        nomesDigitados[i]= input.value;
+
+    }
+
+    imprimirArray(nomesDigitados);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function mostra(mensagem){
+    document.write(mensagem);
+    document.write("</br>");
+}
+
+
+//var arrayNomes = ["João", "Maria", "Paulo", "Pedro"];
+//imprimirArray(arrayNomes);
+preencherArray();
+
+
+    
+
+
+
+    //function adicionar(){
+
+        // var arrayNomes = ["Joao", "Maria", "Paulo", "Pedro"];
+        // var itensRemovidos = arrayNomes.splice(2,2);
+
+        // console.log(arrayNomes);
+        // console.log(itensRemovidos);
+
+    function imprimirArray(arrayNomes){
+
+        arrayNomes.forEach(   (elemento, indice) => mostra ("O item " + indice + " é " + elemento )) ;
+
+    }
+
+
+
+    function preencherArray(){
+
+        var arrayNomes = new Array(5);
+
+        arrayNomes.map( (elemento, indice) => arrayNomes[indice]= prompt('digite os 5 números'));  // com forEach
+
+
+        // for (var i=0; i< arrayNomes.length;i++){                       //com for
+        //    arrayNomes[i]= prompt('digite os 5 números');
+        // }
+
+     imprimirArray(arrayNomes);
+        
+    }
+      
+
+
+</script>
+
+
+
+
