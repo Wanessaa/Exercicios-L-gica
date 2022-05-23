@@ -1,0 +1,104 @@
+<meta charset = "UTF-8">
+
+<input/>
+ <button onclick = "verifica(segredos)"> clicar </button> 
+
+<script>
+
+    var input = document.querySelector("input");
+
+    var segredos = geraArray();
+
+    console.log(segredos);
+   
+    function sorteia(){
+        var segredo = Math.round(Math.random()*10);
+        return segredo;
+    }
+
+
+    function geraArray(){
+
+        var numeros = [];
+
+        var numerosColocados=0;
+
+
+        while(numerosColocados<5){
+
+            var numeroSorteado = sorteia();
+
+            var achou = false;
+
+            if (numeroSorteado!== 0 ){
+                for(var i = 0; i<numeros.length; i++){
+                    if(numeroSorteado == numeros[i]){
+                        achou = true;
+                        break;
+                    }
+                }
+
+
+                if (achou == false){
+                numeros.push (numeroSorteado);
+                numerosColocados++;
+            }
+
+
+
+            }
+
+            
+        }
+        
+
+        return numeros;
+
+    }
+
+    var tentativas = 0;
+
+    function verifica(segredos){
+
+       
+        var acertou = false;
+
+        if(tentativas <3){
+
+            for(var i =0; i< segredos.length;i++){
+                if (input.value == segredos[i]){
+                    alert ("você acertou");
+                    acertou= true;
+                    break;
+                    
+
+                }
+            }
+
+            if(acertou == false){
+               
+                alert('você errou');
+                tentativas++;
+                console.log(tentativas);
+                   
+            }
+        }
+
+
+        if(tentativas==3){
+            alert("você excedeu o numero de tentativas");
+
+        }
+       
+
+
+    }
+     
+
+
+    
+
+
+
+</script>
+

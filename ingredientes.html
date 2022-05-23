@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+
+<h1>Receita do Yan</h1>
+
+<script>
+    var ingredientes = [];
+
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+
+    var contador = 1;
+
+    while( contador <= quantidade) {
+        var achou = false;
+
+        var ingrediente = prompt("Informe o ingrediente " + contador);
+
+
+        for(var i =0; i< ingredientes.length;i++){
+
+            if(ingredientes[i]== ingrediente){
+                achou = true;
+                alert("esse alemento já existe!, digite outro!");
+                break;
+
+
+            }
+        }
+
+
+        if(achou == false){
+
+            ingredientes.push(ingrediente);
+            contador++;
+
+        }
+       
+    }
+
+
+    ingredientes.forEach((elemento,posicao) => mostra ( "ingrediente "+ posicao + " é: "+ elemento));
+    
+
+    function mostra(mensagem){
+        document.write(mensagem);
+        document.write("</br>");
+    }
+
+    console.log(ingredientes);
+</script>
